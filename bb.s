@@ -7,17 +7,15 @@
 .text
 .globl main
 main:
-
 li $s6,0x10010000
 add $t0,$zero,$zero
 addi $t2,$zero,4
-
 loop1:
-beq $t0,$t2,exit1
 sub $t4,$t2,$t0
+beq $t0,$t2,exit1
 loop2:
-beq $t1,$t4,exit2
 sll $t5,$t1,2
+beq $t1,$t4,exit2
 add $t5,$t5,$s6
 lw $t6,0($t5)
 lw $t7,4($t5)
